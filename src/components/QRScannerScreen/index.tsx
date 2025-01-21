@@ -101,14 +101,25 @@ const QRScannerScreen: React.FC = () => {
 
   const checkCameraPermission = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      // First check if we already have permission
+      const permissions = await navigator.mediaDevices.getUserMedia({ video: true });
+      permissions.getTracks().forEach(track => track.stop());
       setHasPermission(true);
-      stream.getTracks().forEach(track => track.stop());
+      return true;
     } catch (err) {
       console.error('Camera permission error:', err);
       setHasPermission(false);
-      setToastMessage('Camera permission is required for scanning');
+      if (err instanceof DOMException) {
+        if (err.name === 'NotAllowedError') {
+          setToastMessage('Camera access was denied. Please enable it in your browser settings.');
+        } else if (err.name === 'NotFoundError') {
+          setToastMessage('No camera found on your device.');
+        } else {
+          setToastMessage('Error accessing camera. Please check your permissions.');
+        }
+      }
       setShowToast(true);
+      return false;
     }
   };
 
@@ -121,13 +132,10 @@ const QRScannerScreen: React.FC = () => {
   };
 
   const handleScanClick = async () => {
-    if (!hasPermission) {
-      await checkCameraPermission();
-      if (!hasPermission) {
-        return;
-      }
+    const hasAccess = await checkCameraPermission();
+    if (hasAccess) {
+      setIsScanning(true);
     }
-    setIsScanning(true);
   };
 
   return (

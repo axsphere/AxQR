@@ -86,9 +86,12 @@ Thank you for using **AxQR**! 🚀
 - These are entirely standalone native projects that should be considered part of your Ionic app (i.e., check them into source control, edit them using their native tooling, etc. Every time you perform a build (e.g. ionic build) that updates your web directory (default: www), you'll need to copy those changes into your native projects
 - Next, create both the iOS and Android projects:
 
-## Commands
+## Generate Environments
+#### ionic cap add ios
+#### ionic cap add android
 
-#### $ ionic cap add ios
-#### $ ionic cap add android
-#### ionic cap copy
-#### ionic cap sync
+## Build and Sync
+#### ionic build && ionic cap sync 
+
+## Launch Android Studio
+#### npx cap open android

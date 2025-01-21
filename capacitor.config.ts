@@ -1,9 +1,17 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'qr-scanner',
-  webDir: 'build'
+  appName: 'AxQR',
+  webDir: 'build',
+  server: {
+    androidScheme: 'https'
+  },
+  plugins: {
+    Permissions: {
+      camera: true
+    }
+  }
 };
 
 export default config;
