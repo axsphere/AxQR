@@ -1,0 +1,122 @@
+.scanner-modal {
+  --height: 100%;
+  --width: 100%;
+  --border-radius: 0;
+  --background: #000000;
+}
+
+.result-modal {
+  --height: auto;
+  --width: 90%;
+  --border-radius: 16px;
+  padding: 20px !important;
+}
+
+#html5qr-code-full-region {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative;
+}
+
+#html5qr-code-full-region video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.scanner-overlay {
+  width: 280px;
+  height: 280px;
+  border: 3px solid #3880ff;
+  border-radius: 16px;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* QR Scanner styles */
+video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 8px;
+}
+
+qr-scanner-overlay {
+  display: none !important;
+}
+
+canvas.hidden {
+  display: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    border-color: #3880ff;
+  }
+  50% {
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6);
+    border-color: #4d8dff;
+  }
+  100% {
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    border-color: #3880ff;
+  }
+}
+
+.scan-btn {
+  background: #009688 !important;
+  color: #fff !important;
+  padding: 10px !important;
+  font-weight: 500 !important;
+  border-radius: 12px !important;
+}
+
+.scan-btn:hover {
+  background: #00887b !important;
+}
+
+.scanner-parent {
+  background-color: #252626 !important;
+}
+
+.scanner-parent-wrap {
+  padding: 20px !important;
+  background-color: #252626 !important;
+}
+
+.scan-result-parent {
+  background-color: #ffffffe3 !important;
+  box-shadow: none;
+}
+
+
+.scan-result-header {
+  font-weight: 600 !important;
+}
+
+.scan-result {
+  font-size: 20px !important;
+  color: #000000ae !important;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+.button-group .result-btn {
+  flex: 1;
+  margin-top: 0 !important;
+}
+
+.result-btn {
+  margin-top: 10% !important;
+  background: #009688 !important;
+}
