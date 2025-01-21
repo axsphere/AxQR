@@ -50,7 +50,7 @@ AxQR respects your privacy. All scanned data is processed locally and never shar
 
 Found a bug or have a feature request?  
 - Open an issue on this repository.  
-- Email us at [support@axqr.com](mailto:support@axqr.com).  
+- Email us at [axspherehub@gmail.com](mailto:axspherehub@gmail.com).  
 
 ---
 
